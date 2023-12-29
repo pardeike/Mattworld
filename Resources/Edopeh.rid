@@ -1,0 +1,1527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedideo>
+	<ideo>
+		<foundation Class="IdeoFoundation_Deity">
+			<def>Deity</def>
+			<place>Wavia</place>
+			<deities />
+		</foundation>
+		<name>Edopeh</name>
+		<adjective>ethical</adjective>
+		<memberName>Ethicist</memberName>
+		<leaderTitleMale>Moral President</leaderTitleMale>
+		<leaderTitleFemale>Moral President</leaderTitleFemale>
+		<description>"They cried for guidance. I showed them that we've long since proven that we have the strength to rightfully rule this universe. No one can argue with that."
+
+  - &lt;i&gt;Life of Edopeh&lt;/i&gt; by Brrainz</description>
+		<descriptionLocked>True</descriptionLocked>
+		<culture>Astropolitan</culture>
+		<iconDef>TribalE</iconDef>
+		<colorDef>DarkSapphire</colorDef>
+		<memes>
+			<li>Structure_Ideological</li>
+			<li>Supremacist</li>
+		</memes>
+		<precepts>
+			<li Class="Precept_Ritual">
+				<name>Great Eulogy</name>
+				<def>Funeral</def>
+				<ID>1821</ID>
+				<randomSeed>-11121389</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<nameMaker>NamerRitualFuneral</nameMaker>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<ritualExpectedDesc>You can hold a {IDEOLIGION_adjective} funeral for {PAWN_nameDef}.</ritualExpectedDesc>
+				<ritualExpectedDescNoAdjective>You can hold a funeral for {PAWN_nameDef}.</ritualExpectedDescNoAdjective>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>FuneralStandard</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_GraveWithTarget">
+					<def>GraveWithTargetsCorpse</def>
+					<parent>Precept_1821</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior Class="RitualBehaviorWorker_Funeral">
+					<def>Funeral</def>
+				</behavior>
+				<triggers>
+					<li Class="RitualObligationTrigger_MemberDied">
+						<mustBePlayerIdeo>True</mustBePlayerIdeo>
+					</li>
+				</triggers>
+				<outcomeEffect Class="RitualOutcomeEffectWorker_FromQuality">
+					<def>AttendedFuneral</def>
+					<compDatas>
+						<li IsNull="True" />
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>Great Eulogy</name>
+				<def>FuneralNoCorpse</def>
+				<ID>1822</ID>
+				<randomSeed>2135920010</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<ritualExpectedDesc>You can hold a {IDEOLIGION_adjective} funeral for {PAWN_nameDef} even though the body was lost.</ritualExpectedDesc>
+				<ritualExpectedDescNoAdjective>You can hold a funeral for {PAWN_nameDef} even though the body was lost.</ritualExpectedDescNoAdjective>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>FuneralNoCorpse</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_AnyEmptyGrave">
+					<def>AnyEmptyGrave</def>
+					<parent>Precept_1822</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior Class="RitualBehaviorWorker_Funeral">
+					<def>Funeral</def>
+				</behavior>
+				<triggers>
+					<li Class="RitualObligationTrigger_MemberCorpseDestroyed">
+						<mustBePlayerIdeo>True</mustBePlayerIdeo>
+					</li>
+				</triggers>
+				<outcomeEffect Class="RitualOutcomeEffectWorker_FromQuality">
+					<def>AttendedFuneralNoCorpse</def>
+					<compDatas>
+						<li IsNull="True" />
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>Fiesta of Violence</name>
+				<def>DateRitualConsumable</def>
+				<ID>1864</ID>
+				<randomSeed>-458127489</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<descOverride>A party around a Christmas tree. Participants will gather around a Christmas tree and make merry.</descOverride>
+				<nameMaker>NamerRitualFestival</nameMaker>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<ritualExpectedDesc>Every year on {DATE}, {MEMBERS} can have a special celebration.</ritualExpectedDesc>
+				<shortDescOverride>christmas tree party</shortDescOverride>
+				<iconPathOverride>UI/Icons/Rituals/TreeCelebration</iconPathOverride>
+				<patternGroupTag>RitualBuildingConsumer</patternGroupTag>
+				<canBeAnytime>True</canBeAnytime>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>CelebrationTree</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_ConsumableBuilding">
+					<def>ChristmasTree</def>
+					<parent>Precept_1864</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior>
+					<def>CelebrationTree</def>
+				</behavior>
+				<triggers>
+					<li Class="RitualObligationTrigger_Date">
+						<mustBePlayerIdeo>True</mustBePlayerIdeo>
+						<triggerDaysSinceStartOfYear>54</triggerDaysSinceStartOfYear>
+					</li>
+				</triggers>
+				<attachableOutcomeEffect>RandomRecruit</attachableOutcomeEffect>
+				<outcomeEffect Class="RitualOutcomeEffectWorker_RemoveConsumableBuilding">
+					<def>DestroyConsumableBuilding_ChristmasTree</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li Class="RitualOutcomeComp_DataRoomStatCached" />
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>Celebration of Ethics</name>
+				<def>Festival</def>
+				<ID>1866</ID>
+				<randomSeed>-1550087812</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<descOverride>A dance party with loud music. Participants will gather, socialize, and dance to have fun and connect with each other.</descOverride>
+				<nameMaker>NamerRitualFestival</nameMaker>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<ritualExpectedDesc>Every year on {DATE}, {MEMBERS} can have a special celebration.</ritualExpectedDesc>
+				<shortDescOverride>dance party</shortDescOverride>
+				<iconPathOverride>UI/Icons/Rituals/CelebrationPartyDanceTech</iconPathOverride>
+				<patternGroupTag>CelebratedDate</patternGroupTag>
+				<minTechLevel>Industrial</minTechLevel>
+				<canBeAnytime>True</canBeAnytime>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>CelebrationPartyDanceTech</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_LightBall">
+					<def>LightBall</def>
+					<parent>Precept_1866</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior Class="RitualBehaviorWorker_DancePartyTech">
+					<def>DancePartyTech</def>
+				</behavior>
+				<triggers>
+					<li Class="RitualObligationTrigger_Date">
+						<mustBePlayerIdeo>True</mustBePlayerIdeo>
+						<triggerDaysSinceStartOfYear>18</triggerDaysSinceStartOfYear>
+					</li>
+				</triggers>
+				<attachableOutcomeEffect>DiscoverAncientComplex</attachableOutcomeEffect>
+				<outcomeEffect Class="RitualOutcomeEffectWorker_DanceParty">
+					<def>CelebrationPartyDanceTech</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li Class="RitualOutcomeComp_DataRoomStatCached" />
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>Festival of Dominance</name>
+				<def>Festival</def>
+				<ID>1865</ID>
+				<randomSeed>-866985748</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<descOverride>A social ritual where people release skylanterns. Participants will assemble wooden skylanterns while socializing, then release them and watch them drift away.</descOverride>
+				<nameMaker>NamerRitualFestival</nameMaker>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<ritualExpectedDesc>Every year on {DATE}, {MEMBERS} can have a special celebration.</ritualExpectedDesc>
+				<shortDescOverride>skylantern festival</shortDescOverride>
+				<iconPathOverride>UI/Icons/Rituals/CelebrationPartySkylanterns</iconPathOverride>
+				<patternGroupTag>CelebratedDate</patternGroupTag>
+				<canBeAnytime>True</canBeAnytime>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>CelebrationSkyLanterns</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_SkyLanterns">
+					<def>CampfireSkylanterns</def>
+					<parent>Precept_1865</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior>
+					<def>CelebrationSkyLanterns</def>
+				</behavior>
+				<triggers>
+					<li Class="RitualObligationTrigger_Date">
+						<mustBePlayerIdeo>True</mustBePlayerIdeo>
+						<triggerDaysSinceStartOfYear>32</triggerDaysSinceStartOfYear>
+					</li>
+				</triggers>
+				<attachableOutcomeEffect>DiscoverAncientComplex</attachableOutcomeEffect>
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Skylantern">
+					<def>CelebrationSkyLanterns</def>
+					<compDatas>
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_RitualSeat">
+				<name>ritual seat</name>
+				<def>IdeoRitualSeat</def>
+				<ID>1825</ID>
+				<randomSeed>-958615846</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<thingDef>KneelPillow</thingDef>
+			</li>
+			<li>
+				<name>physical love</name>
+				<def>Lovin_FreeApproved</def>
+				<ID>1826</ID>
+				<randomSeed>-174881307</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>female clothing</name>
+				<def>Nudity_Female_UncoveredGroinOrChestDisapproved</def>
+				<ID>1827</ID>
+				<randomSeed>53016571</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>male clothing</name>
+				<def>Nudity_Male_UncoveredGroinDisapproved</def>
+				<ID>1828</ID>
+				<randomSeed>-165067999</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>cannibalism</name>
+				<def>Cannibalism_Acceptable</def>
+				<ID>1829</ID>
+				<randomSeed>-254510956</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>anima tree linking</name>
+				<def>AnimaTreeLinking</def>
+				<ID>1830</ID>
+				<randomSeed>-727031556</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<isAnytime>True</isAnytime>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>AnimaTreeLinking</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_AnimaTree">
+					<def>AnimaTree</def>
+					<parent>Precept_1830</parent>
+				</obligationTargetFilter>
+				<targetFilter Class="RitualTargetFilter_SelectedThing">
+					<def>SelectedThing</def>
+				</targetFilter>
+				<behavior Class="RitualBehaviorWorker_AnimaLinking">
+					<def>AnimaTreeLinking</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_AnimaTreeLinking">
+					<def>AnimaTreeLinking</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li>
+				<name>blindness</name>
+				<def>Blinding_Horrible</def>
+				<ID>1831</ID>
+				<randomSeed>-833801005</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>child birth</name>
+				<def>ChildBirth</def>
+				<ID>1832</ID>
+				<randomSeed>896416758</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<isAnytime>True</isAnytime>
+				<allowOtherInstances>True</allowOtherInstances>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>ChildBirth</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_ChildBirth">
+					<def>ChildBirth</def>
+					<parent>Precept_1832</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior Class="RitualBehaviorWorker_ChildBirth">
+					<def>ChildBirth</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_ChildBirth">
+					<def>ChildBirth</def>
+					<compDatas>
+						<li IsNull="True" />
+						<li IsNull="True" />
+						<li IsNull="True" />
+						<li IsNull="True" />
+						<li Class="RitualOutcomeComp_DataRoomStatCached" />
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>conversion ritual</name>
+				<def>Conversion</def>
+				<ID>1833</ID>
+				<randomSeed>-1666508992</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<isAnytime>True</isAnytime>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<ritualExplanation>In case of success, their certainty will be reduced or they will convert immediately. If it backfires, their certainty in own beliefs will increase.</ritualExplanation>
+				<canMergeGizmosFromDifferentIdeos>False</canMergeGizmosFromDifferentIdeos>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>Conversion</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_AnyRitualSpotOrAltar">
+					<def>RitualSpotOrAltar</def>
+					<parent>Precept_1833</parent>
+				</obligationTargetFilter>
+				<targetFilter Class="RitualTargetFilter_Altar">
+					<def>AltarOrRitualSpot</def>
+				</targetFilter>
+				<behavior Class="RitualBehaviorWorker_Conversion">
+					<def>Conversion</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Conversion">
+					<def>Conversion</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataRoomStatCached" />
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li IsNull="True" />
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li>
+				<name>corpses</name>
+				<def>Corpses_DontCare</def>
+				<ID>1834</ID>
+				<randomSeed>-364343397</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>public execution</name>
+				<def>Execution</def>
+				<ID>1835</ID>
+				<randomSeed>1019894616</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<isAnytime>True</isAnytime>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>Execution</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_AnyRitualSpotIdeogramOrAltar">
+					<def>RitualSpotIdeogramOrAltar</def>
+					<parent>Precept_1835</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior Class="RitualBehaviorWorker_Execution">
+					<def>Execution</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Execution">
+					<def>Execution</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li>
+				<name>execution</name>
+				<def>Execution_DontCare</def>
+				<ID>1836</ID>
+				<randomSeed>-1898798406</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>fungus</name>
+				<def>FungusEating_Despised</def>
+				<ID>1837</ID>
+				<randomSeed>34668694</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>diversity of thought</name>
+				<def>IdeoDiversity_Standard</def>
+				<ID>1838</ID>
+				<randomSeed>1474301999</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>insect meat</name>
+				<def>InsectMeatEating_Despised_Classic</def>
+				<ID>1839</ID>
+				<randomSeed>-107952787</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>leader speech</name>
+				<def>LeaderSpeech</def>
+				<ID>1840</ID>
+				<randomSeed>-564195624</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<isAnytime>True</isAnytime>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<canMergeGizmosFromDifferentIdeos>False</canMergeGizmosFromDifferentIdeos>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>LeaderSpeech</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_IdeoBuildingOrRitualSpot">
+					<def>AnyIdeoBuildingOrRitualSpot</def>
+					<parent>Precept_1840</parent>
+				</obligationTargetFilter>
+				<targetFilter Class="RitualTargetFilter_IdeoBuildingOrRitualSpot">
+					<def>IdeoBuildingOrRitualSpot</def>
+				</targetFilter>
+				<behavior Class="RitualBehaviorWorker_Speech">
+					<def>LeaderSpeech</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Speech">
+					<def>AttendedSpeech</def>
+					<compDatas>
+						<li IsNull="True" />
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li Class="RitualOutcomeComp_DataRoomStatCached" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li>
+				<name>eating nutrient paste</name>
+				<def>NutrientPasteEating_Disgusting</def>
+				<ID>1841</ID>
+				<randomSeed>1807757559</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>research</name>
+				<def>Research_Normal</def>
+				<ID>1842</ID>
+				<randomSeed>-197130828</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>role change</name>
+				<def>RoleChange</def>
+				<ID>1843</ID>
+				<randomSeed>384774279</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<isAnytime>True</isAnytime>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>RoleChange</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_AnyRitualSpotIdeogramOrAltar">
+					<def>RitualSpotIdeogramOrAltar</def>
+					<parent>Precept_1843</parent>
+				</obligationTargetFilter>
+				<targetFilter Class="RitualTargetFilter_AltarOrIdeogram">
+					<def>AltarIdeogramOrRitualSpot</def>
+				</targetFilter>
+				<behavior>
+					<def>RoleChange</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_RoleChange">
+					<def>RoleChange</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataRoleChangeParticipants">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li>
+				<name>scarification</name>
+				<def>Scarification_Horrible</def>
+				<ID>1844</ID>
+				<randomSeed>-2143026731</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>skullspike</name>
+				<def>Skullspike_Desired</def>
+				<ID>1845</ID>
+				<randomSeed>-1453177324</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>slavery</name>
+				<def>Slavery_Acceptable</def>
+				<ID>1846</ID>
+				<randomSeed>-1771576626</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>throne speech</name>
+				<def>ThroneSpeech</def>
+				<ID>1847</ID>
+				<randomSeed>-1125800788</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>ThroneSpeech</sourcePattern>
+				<obligationTargetFilter IsNull="True" />
+				<targetFilter Class="RitualTargetFilter_UsableThrone">
+					<def>UsableThrone</def>
+				</targetFilter>
+				<behavior Class="RitualBehaviorWorker_ThroneSpeech">
+					<def>ThroneSpeech</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Speech">
+					<def>AttendedSpeech</def>
+					<compDatas>
+						<li IsNull="True" />
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li Class="RitualOutcomeComp_DataRoomStatCached" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>tree connection ritual</name>
+				<def>TreeConnection</def>
+				<ID>1848</ID>
+				<randomSeed>2141562516</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<iconPathOverride>UI/Icons/Rituals/TreeConnection</iconPathOverride>
+				<isAnytime>True</isAnytime>
+				<playsIdeoMusic>True</playsIdeoMusic>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>TreeConnection</sourcePattern>
+				<obligationTargetFilter Class="RitualObligationTargetWorker_UnconnectedGauranlenTree">
+					<def>GauranlenTree</def>
+					<parent>Precept_1848</parent>
+				</obligationTargetFilter>
+				<targetFilter IsNull="True" />
+				<behavior>
+					<def>TreeConnection</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_ConnectToTree">
+					<def>ConnectToTree</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>trial</name>
+				<def>Trial</def>
+				<ID>1849</ID>
+				<randomSeed>1203907147</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>Trial</sourcePattern>
+				<obligationTargetFilter IsNull="True" />
+				<targetFilter Class="RitualTargetFilter_IdeoBuildingOrRitualSpot">
+					<def>IdeoBuildingOrRitualSpot</def>
+				</targetFilter>
+				<behavior Class="RitualBehaviorWorker_Trial">
+					<def>Trial</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Trial">
+					<def>Trial</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li IsNull="True" />
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>trial</name>
+				<def>TrialMentalState</def>
+				<ID>1850</ID>
+				<randomSeed>2036677585</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>TrialMentalState</sourcePattern>
+				<obligationTargetFilter IsNull="True" />
+				<targetFilter Class="RitualTargetFilter_IdeoBuildingOrRitualSpot">
+					<def>IdeoBuildingOrRitualSpot</def>
+				</targetFilter>
+				<behavior Class="RitualBehaviorWorker_Trial">
+					<def>TrialMentalState</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Trial">
+					<def>TrialMentalState</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li Class="Precept_Ritual">
+				<name>trial</name>
+				<def>TrialPrisoner</def>
+				<ID>1851</ID>
+				<randomSeed>-106558004</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<ritualOnlyForIdeoMembers>True</ritualOnlyForIdeoMembers>
+				<generatedAttachedReward>True</generatedAttachedReward>
+				<sourcePattern>TrialPrisoner</sourcePattern>
+				<obligationTargetFilter IsNull="True" />
+				<targetFilter Class="RitualTargetFilter_IdeoBuildingOrRitualSpot">
+					<def>IdeoBuildingOrRitualSpot</def>
+				</targetFilter>
+				<behavior Class="RitualBehaviorWorker_Trial">
+					<def>TrialPrisoner</def>
+				</behavior>
+				<triggers />
+				<outcomeEffect Class="RitualOutcomeEffectWorker_Trial">
+					<def>Trial</def>
+					<compDatas>
+						<li Class="RitualOutcomeComp_DataThingPresence">
+							<presentForTicks>
+								<keys />
+								<values />
+							</presentForTicks>
+						</li>
+						<li IsNull="True" />
+						<li IsNull="True" />
+					</compDatas>
+				</outcomeEffect>
+			</li>
+			<li>
+				<name>organ use</name>
+				<def>OrganUse_Acceptable</def>
+				<ID>1852</ID>
+				<randomSeed>1374866515</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>Women's spouses</name>
+				<def>SpouseCount_Female_MaxOne</def>
+				<ID>1853</ID>
+				<randomSeed>579725657</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>Men's spouses</name>
+				<def>SpouseCount_Male_MaxOne</def>
+				<ID>1854</ID>
+				<randomSeed>1260253657</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li>
+				<name>marriage name</name>
+				<def>MarriageName_KeepNames</def>
+				<ID>1855</ID>
+				<randomSeed>1855621265</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+			</li>
+			<li Class="Precept_RoleSingle">
+				<name>Moral President</name>
+				<def>IdeoRole_Leader</def>
+				<ID>1856</ID>
+				<randomSeed>-1697776930</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<apparelRequirements>
+					<li>
+						<allowedFactionCategoryTags IsNull="True" />
+						<disallowedFactionCategoryTags IsNull="True" />
+						<anyMemeRequired IsNull="True" />
+						<requirement>
+							<bodyPartGroupsMatchAny>
+								<li>UpperHead</li>
+								<li>Neck</li>
+								<li>Shoulders</li>
+								<li>FullHead</li>
+							</bodyPartGroupsMatchAny>
+							<requiredDefs>
+								<li>Apparel_Broadwrap</li>
+							</requiredDefs>
+							<requiredTags IsNull="True" />
+							<allowedTags IsNull="True" />
+						</requirement>
+					</li>
+				</apparelRequirements>
+				<restrictToSupremeGender>True</restrictToSupremeGender>
+				<chosenPawn>
+					<pawn>null</pawn>
+					<abilities>
+						<li>
+							<def>LeaderSpeech</def>
+							<Id>340</Id>
+							<sourcePrecept>Precept_1856</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbility">
+										<loadID>Ability_340_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_340</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+						<li>
+							<def>WorkDrive</def>
+							<Id>341</Id>
+							<sourcePrecept>Precept_1856</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbilityTouch">
+										<loadID>Ability_341_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_341</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+						<li>
+							<def>CombatCommand</def>
+							<Id>342</Id>
+							<sourcePrecept>Precept_1856</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbility">
+										<loadID>Ability_342_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_342</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+						<li>
+							<def>Trial</def>
+							<Id>343</Id>
+							<sourcePrecept>Precept_1856</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbility">
+										<loadID>Ability_343_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_343</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+					</abilities>
+				</chosenPawn>
+			</li>
+			<li Class="Precept_RoleSingle">
+				<name>Supreme Thinker</name>
+				<def>IdeoRole_Moralist</def>
+				<ID>1857</ID>
+				<randomSeed>2076756207</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<apparelRequirements>
+					<li>
+						<allowedFactionCategoryTags IsNull="True" />
+						<disallowedFactionCategoryTags IsNull="True" />
+						<anyMemeRequired IsNull="True" />
+						<requirement>
+							<bodyPartGroupsMatchAny>
+								<li>FullHead</li>
+							</bodyPartGroupsMatchAny>
+							<requiredDefs>
+								<li>Apparel_VisageMask</li>
+							</requiredDefs>
+							<requiredTags IsNull="True" />
+							<allowedTags IsNull="True" />
+						</requirement>
+					</li>
+					<li>
+						<allowedFactionCategoryTags IsNull="True" />
+						<disallowedFactionCategoryTags IsNull="True" />
+						<anyMemeRequired IsNull="True" />
+						<requirement>
+							<bodyPartGroupsMatchAny>
+								<li>Torso</li>
+							</bodyPartGroupsMatchAny>
+							<requiredDefs IsNull="True" />
+							<requiredTags>
+								<li>Cape</li>
+							</requiredTags>
+							<allowedTags IsNull="True" />
+						</requirement>
+					</li>
+				</apparelRequirements>
+				<chosenPawn>
+					<pawn>null</pawn>
+					<abilities>
+						<li>
+							<def>Convert</def>
+							<Id>344</Id>
+							<sourcePrecept>Precept_1857</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbilityTouch">
+										<loadID>Ability_344_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_344</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+						<li>
+							<def>Counsel</def>
+							<Id>345</Id>
+							<sourcePrecept>Precept_1857</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbilityTouch">
+										<loadID>Ability_345_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_345</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+						<li>
+							<def>Reassure</def>
+							<Id>346</Id>
+							<sourcePrecept>Precept_1857</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbilityTouch">
+										<loadID>Ability_346_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_346</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+						<li>
+							<def>ConversionRitual</def>
+							<Id>347</Id>
+							<sourcePrecept>Precept_1857</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbility">
+										<loadID>Ability_347_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_347</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+						<li>
+							<def>PreachHealth</def>
+							<Id>348</Id>
+							<sourcePrecept>Precept_1857</sourcePrecept>
+							<verbTracker>
+								<verbs>
+									<li Class="Verb_CastAbilityTouch">
+										<loadID>Ability_348_0</loadID>
+										<currentTarget>(0, 0, 0)</currentTarget>
+										<currentDestination>(0, 0, 0)</currentDestination>
+										<lastShotTick>-999999</lastShotTick>
+										<canHitNonTargetPawnsNow>True</canHitNonTargetPawnsNow>
+										<ability>Ability_348</ability>
+									</li>
+								</verbs>
+							</verbTracker>
+						</li>
+					</abilities>
+				</chosenPawn>
+			</li>
+			<li Class="Precept_RoleMulti">
+				<name>Clublover</name>
+				<def>IdeoRole_MeleeSpecialist</def>
+				<ID>1858</ID>
+				<randomSeed>-688154394</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<active>True</active>
+				<apparelRequirements>
+					<li>
+						<allowedFactionCategoryTags IsNull="True" />
+						<disallowedFactionCategoryTags IsNull="True" />
+						<anyMemeRequired IsNull="True" />
+						<requirement>
+							<bodyPartGroupsMatchAny>
+								<li>UpperHead</li>
+							</bodyPartGroupsMatchAny>
+							<requiredDefs>
+								<li>Apparel_HatHood</li>
+							</requiredDefs>
+							<requiredTags IsNull="True" />
+							<allowedTags IsNull="True" />
+						</requirement>
+					</li>
+				</apparelRequirements>
+			</li>
+			<li Class="Precept_RoleMulti">
+				<name>Bulletizer</name>
+				<def>IdeoRole_ShootingSpecialist</def>
+				<ID>1859</ID>
+				<randomSeed>-894585098</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<active>True</active>
+				<apparelRequirements>
+					<li>
+						<allowedFactionCategoryTags IsNull="True" />
+						<disallowedFactionCategoryTags IsNull="True" />
+						<anyMemeRequired IsNull="True" />
+						<requirement>
+							<bodyPartGroupsMatchAny>
+								<li>Torso</li>
+								<li>Neck</li>
+								<li>Shoulders</li>
+								<li>Arms</li>
+								<li>Legs</li>
+							</bodyPartGroupsMatchAny>
+							<requiredDefs>
+								<li>Apparel_Robe</li>
+							</requiredDefs>
+							<requiredTags IsNull="True" />
+							<allowedTags IsNull="True" />
+						</requirement>
+					</li>
+				</apparelRequirements>
+			</li>
+			<li Class="Precept_Building">
+				<name>Platform of War</name>
+				<def>IdeoBuilding</def>
+				<ID>1860</ID>
+				<randomSeed>-635465457</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<thingDef>Altar_Small</thingDef>
+				<presenceDemand>
+					<ID>52</ID>
+					<minExpectation>High</minExpectation>
+					<roomRequirements>
+						<li Class="RoomRequirement_Area">
+							<area>25</area>
+						</li>
+						<li Class="RoomRequirement_ForbiddenBuildings">
+							<labelKey>RoomRequirementNoBeds</labelKey>
+							<buildingTags>
+								<li>Bed</li>
+							</buildingTags>
+						</li>
+						<li Class="RoomRequirement_ForbiddenBuildings">
+							<labelKey>RoomRequirementNoProductionFacilities</labelKey>
+							<buildingTags>
+								<li>Production</li>
+							</buildingTags>
+						</li>
+					</roomRequirements>
+				</presenceDemand>
+			</li>
+			<li Class="Precept_Building">
+				<name>Strong Sculpture</name>
+				<def>IdeoBuilding</def>
+				<ID>1861</ID>
+				<randomSeed>-524152669</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<thingDef>SculptureLarge</thingDef>
+				<presenceDemand>
+					<ID>53</ID>
+					<minExpectation>High</minExpectation>
+					<roomRequirements>
+						<li Class="RoomRequirement_ThingCount">
+							<thingDef>Column</thingDef>
+							<count>4</count>
+						</li>
+						<li Class="RoomRequirement_ForbiddenBuildings">
+							<labelKey>RoomRequirementNoBeds</labelKey>
+							<buildingTags>
+								<li>Bed</li>
+							</buildingTags>
+						</li>
+						<li Class="RoomRequirement_ForbiddenBuildings">
+							<labelKey>RoomRequirementNoProductionFacilities</labelKey>
+							<buildingTags>
+								<li>Production</li>
+							</buildingTags>
+						</li>
+					</roomRequirements>
+				</presenceDemand>
+			</li>
+			<li Class="Precept_Relic">
+				<name>Prime Memento</name>
+				<def>IdeoRelic</def>
+				<ID>1862</ID>
+				<randomSeed>-1936368746</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<thingDef>Apparel_PsychicInsanityLance</thingDef>
+			</li>
+			<li Class="Precept_Relic">
+				<name>Super- Lance</name>
+				<def>IdeoRelic</def>
+				<ID>1863</ID>
+				<randomSeed>780879857</randomSeed>
+				<usesDefiniteArticle>True</usesDefiniteArticle>
+				<thingDef>Gun_ChargeLance</thingDef>
+			</li>
+		</precepts>
+		<thingStyleCategories />
+		<usedSymbols>
+			<li>Astro-Ethics</li>
+			<li>ethical</li>
+			<li>Ethicist</li>
+		</usedSymbols>
+		<usedSymbolPacks>
+			<li>Ethics</li>
+		</usedSymbolPacks>
+		<style>
+			<hairFrequencies>
+				<vals>
+					<li />
+					<li>
+						<gender>Female</gender>
+					</li>
+					<li />
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<gender>FemaleUsually</gender>
+					</li>
+					<li>
+						<gender>FemaleUsually</gender>
+					</li>
+					<li>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>FemaleUsually</gender>
+					</li>
+					<li>
+						<gender>FemaleUsually</gender>
+					</li>
+					<li>
+						<gender>FemaleUsually</gender>
+					</li>
+					<li />
+					<li>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li />
+					<li>
+						<frequency>Normal</frequency>
+						<gender>MaleUsually</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Female</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+					</li>
+					<li />
+					<li />
+				</vals>
+			</hairFrequencies>
+			<beardFrequencies>
+				<vals>
+					<li>
+						<frequency>Frequent</frequency>
+						<gender>Any</gender>
+					</li>
+					<li />
+					<li />
+					<li />
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li />
+					<li />
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Rare</frequency>
+					</li>
+					<li>
+						<frequency>Rare</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Rare</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Rare</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Rare</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li />
+					<li>
+						<frequency>Uncommon</frequency>
+					</li>
+					<li>
+						<frequency>Rare</frequency>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+				</vals>
+			</beardFrequencies>
+			<tattooFrequencies>
+				<vals>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<frequency>Normal</frequency>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+					<li>
+						<gender>Any</gender>
+					</li>
+				</vals>
+			</tattooFrequencies>
+			<styleForThingDef>
+				<keys />
+				<values />
+			</styleForThingDef>
+		</style>
+		<fluid>True</fluid>
+	</ideo>
+</savedideo>
