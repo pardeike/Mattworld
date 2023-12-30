@@ -100,18 +100,21 @@ namespace Mattworld
 				Find.GameInitData.permadeath = true;
 				Find.GameInitData.mapSize = 250;
 
-				var me = LoadedModManager.GetMod<Mattworld_Main>();
-				var path = Path.Combine(me.Content.RootDir, "Resources", "Edopeh.rid");
-				GameDataSaveLoader.TryLoadIdeo(path, out var ideo);
+				if (ModsConfig.IdeologyActive)
+				{
+					var me = LoadedModManager.GetMod<Mattworld_Main>();
+					var path = Path.Combine(me.Content.RootDir, "Resources", "Edopeh.rid");
+					GameDataSaveLoader.TryLoadIdeo(path, out var ideo);
 
-				Faction.OfPlayer.ideos.SetPrimary(ideo);
-				foreach (Ideo ideo2 in Find.IdeoManager.IdeosListForReading)
-					ideo2.initialPlayerIdeo = false;
-				ideo.initialPlayerIdeo = true;
-				Find.IdeoManager.Add(ideo);
+					Faction.OfPlayer.ideos.SetPrimary(ideo);
+					foreach (Ideo ideo2 in Find.IdeoManager.IdeosListForReading)
+						ideo2.initialPlayerIdeo = false;
+					ideo.initialPlayerIdeo = true;
+					Find.IdeoManager.Add(ideo);
 
-				Find.IdeoManager.RemoveUnusedStartingIdeos();
-				Find.Scenario.PostIdeoChosen();
+					Find.IdeoManager.RemoveUnusedStartingIdeos();
+					Find.Scenario.PostIdeoChosen();
+				}
 
 				var pawn = Find.GameInitData.startingAndOptionalPawns.First();
 				while (pawn.gender != Gender.Male)

@@ -4,7 +4,7 @@
 		<ModName>Mattworld</ModName>
 		<ModFileName>Mattworld</ModFileName>
 		<Repository>https://github.com/pardeike/Mattworld</Repository>
-		<ModVersion>1.0.0.0</ModVersion>
+		<ModVersion>1.1.0.0</ModVersion>
 		<ProjectGuid>{AC5EE7A1-16EA-498D-B21A-83ACF78F0E5A}</ProjectGuid>
 	</PropertyGroup>
 
