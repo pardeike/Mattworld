@@ -7,15 +7,25 @@ namespace Mattworld
 	[StaticConstructorOnStartup]
 	public static class Defs
 	{
+		public static TraitDef Beauty;
+		public static TraitDef Cannibal;
 		public static TraitDef FastLearner;
-		public static TraitDef Immunity;
-		public static TraitDef QuickSleeper;
-		public static TraitDef Nimble;
-		public static TraitDef NightOwl;
-		public static TraitDef TorturedArtist;
-		public static TraitDef Neurotic;
 		public static TraitDef Gourmand;
+		public static TraitDef Immunity;
+		public static TraitDef Masochist;
+		public static TraitDef NaturalMood;
+		public static TraitDef Nerves;
+		public static TraitDef Neurotic;
+		public static TraitDef NightOwl;
+		public static TraitDef Nimble;
+		public static TraitDef PsychicSensitivity;
+		public static TraitDef QuickSleeper;
+		public static TraitDef ShootingAccuracy;
 		public static TraitDef SlowLearner;
+		public static TraitDef SpeedOffset;
+		public static TraitDef TooSmart;
+		public static TraitDef TorturedArtist;
+		public static TraitDef Tough;
 	}
 
 	struct TraitScore(TraitDef def, int degree = 0)
@@ -33,40 +43,40 @@ namespace Mattworld
 
 		public static TraitScore[] sortedTraits =
 		[
-			new TraitScore(TraitDefOf.Tough),
+			new TraitScore(Defs.Tough),
 			new TraitScore(Defs.FastLearner),
 			new TraitScore(TraitDefOf.Industriousness, 2), // Industrious
 			new TraitScore(TraitDefOf.Industriousness, 1), // Hard Worker
-			new TraitScore(TraitDefOf.SpeedOffset, 2), // Jogger
-			new TraitScore(TraitDefOf.NaturalMood, 2), // Sanguine
-			new TraitScore(TraitDefOf.NaturalMood, 1), // Optimist
+			new TraitScore(Defs.SpeedOffset, 2), // Jogger
+			new TraitScore(Defs.NaturalMood, 2), // Sanguine
+			new TraitScore(Defs.NaturalMood, 1), // Optimist
 			new TraitScore(Defs.Immunity, 1), // Super-immune
-			new TraitScore(TraitDefOf.Nerves, 2), // Iron Willed
+			new TraitScore(Defs.Nerves, 2), // Iron Willed
 			new TraitScore(Defs.QuickSleeper),
-			new TraitScore(TraitDefOf.Nerves, 1), // Steadfast
+			new TraitScore(Defs.Nerves, 1), // Steadfast
 			new TraitScore(TraitDefOf.Kind),
 			new TraitScore(TraitDefOf.Psychopath),
 			new TraitScore(Defs.Nimble),
-			new TraitScore(TraitDefOf.SpeedOffset, 1), // Fast Walker
+			new TraitScore(Defs.SpeedOffset, 1), // Fast Walker
 			new TraitScore(TraitDefOf.GreatMemory),
-			new TraitScore(TraitDefOf.Beauty, 2), // Beautiful
+			new TraitScore(Defs.Beauty, 2), // Beautiful
 			new TraitScore(TraitDefOf.Bloodlust),
-			new TraitScore(TraitDefOf.Masochist),
-			new TraitScore(TraitDefOf.Beauty, 1), // Pretty
+			new TraitScore(Defs.Masochist),
+			new TraitScore(Defs.Beauty, 1), // Pretty
 			new TraitScore(TraitDefOf.Transhumanist),
-			new TraitScore(TraitDefOf.Cannibal),
-			new TraitScore(TraitDefOf.ShootingAccuracy, -1), // Trigger Happy
+			new TraitScore(Defs.Cannibal),
+			new TraitScore(Defs.ShootingAccuracy, -1), // Trigger Happy
 			new TraitScore(TraitDefOf.Ascetic),
-			new TraitScore(TraitDefOf.TooSmart),
+			new TraitScore(Defs.TooSmart),
 			new TraitScore(TraitDefOf.Brawler),
-			new TraitScore(TraitDefOf.ShootingAccuracy, 1), // Careful Shooter
+			new TraitScore(Defs.ShootingAccuracy, 1), // Careful Shooter
 			new TraitScore(TraitDefOf.Undergrounder),
 			new TraitScore(Defs.NightOwl),
 			new TraitScore(TraitDefOf.Bisexual),
-			new TraitScore(TraitDefOf.PsychicSensitivity, 2), // Psychically Hypersensitive
-			new TraitScore(TraitDefOf.PsychicSensitivity, 1), // Psychically Sensitive
-			new TraitScore(TraitDefOf.PsychicSensitivity, -2), // Psychically Deaf
-			new TraitScore(TraitDefOf.PsychicSensitivity, -1), // Psychically Dull
+			new TraitScore(Defs.PsychicSensitivity, 2), // Psychically Hypersensitive
+			new TraitScore(Defs.PsychicSensitivity, 1), // Psychically Sensitive
+			new TraitScore(Defs.PsychicSensitivity, -2), // Psychically Deaf
+			new TraitScore(Defs.PsychicSensitivity, -1), // Psychically Dull
 			new TraitScore(TraitDefOf.Gay),
 			new TraitScore(Defs.TorturedArtist),
 			new TraitScore(TraitDefOf.Asexual),
@@ -75,28 +85,28 @@ namespace Mattworld
 			new TraitScore(TraitDefOf.DrugDesire, -1), // Teetotaler
 			new TraitScore(Defs.Gourmand),
 			new TraitScore(TraitDefOf.Nudist),
-			new TraitScore(TraitDefOf.Nerves, -1), // Nervous
-			new TraitScore(TraitDefOf.Beauty, -1), // Ugly
+			new TraitScore(Defs.Nerves, -1), // Nervous
+			new TraitScore(Defs.Beauty, -1), // Ugly
 			new TraitScore(TraitDefOf.Abrasive),
 			new TraitScore(TraitDefOf.DrugDesire, 1), // Chemical Interest
-			new TraitScore(TraitDefOf.NaturalMood, -1), // Pessimist
+			new TraitScore(Defs.NaturalMood, -1), // Pessimist
 			new TraitScore(Defs.Immunity, -1), // Sickly
 			new TraitScore(TraitDefOf.Industriousness, -1), // Lazy
 			new TraitScore(TraitDefOf.AnnoyingVoice),
 			new TraitScore(TraitDefOf.DislikesMen), // Misandrist
-			new TraitScore(TraitDefOf.Nerves, -2), // Volatile
-			new TraitScore(TraitDefOf.SpeedOffset, -1), // Slowpoke
+			new TraitScore(Defs.Nerves, -2), // Volatile
+			new TraitScore(Defs.SpeedOffset, -1), // Slowpoke
 			new TraitScore(TraitDefOf.DrugDesire, 2), // Chemical Fascination
 			new TraitScore(TraitDefOf.BodyPurist),
 			new TraitScore(TraitDefOf.DislikesWomen), // Misogynist
 			new TraitScore(TraitDefOf.CreepyBreathing),
-			new TraitScore(TraitDefOf.Beauty, -2), // Staggeringly Ugly
+			new TraitScore(Defs.Beauty, -2), // Staggeringly Ugly
 			new TraitScore(TraitDefOf.Greedy),
 			new TraitScore(TraitDefOf.Wimp),
 			new TraitScore(Defs.SlowLearner),
 			new TraitScore(TraitDefOf.Industriousness, -2), // Slothful
 			new TraitScore(TraitDefOf.Jealous),
-			new TraitScore(TraitDefOf.NaturalMood, -2), // Depressive
+			new TraitScore(Defs.NaturalMood, -2), // Depressive
 			new TraitScore(TraitDefOf.Pyromaniac),
 		];
 

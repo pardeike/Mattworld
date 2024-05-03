@@ -41,7 +41,7 @@ namespace Mattworld
 	{
 		public static bool Prefix(ref int __result)
 		{
-			__result = TileFinder.RandomSettlementTileFor(Faction.OfPlayer, true, x => 
+			__result = TileFinder.RandomSettlementTileFor(Faction.OfPlayer, true, x =>
 			{
 				var tile = Find.WorldGrid[x];
 				if (tile.hilliness < Hilliness.LargeHills)
@@ -155,16 +155,16 @@ namespace Mattworld
 			var matcher = new CodeMatcher(instructions, gen)
 				.MatchStartForward(
 					new CodeMatch(IsDisplayClassConstructor),
-					Stloc[name: "displayclass"]
-				);
-
-			var local_displayclass = matcher.NamedMatch("displayclass").operand as LocalBuilder;
+					Stloc_3
+				)
+				.ThrowIfInvalid("cannot find <>c__DisplayClass()+stloc_3");
 
 			matcher = matcher.MatchEndForward(
-					new CodeMatch(c => c.IsLdloc(), "weightSelector"),
+					Ldloc_S[name: "weightSelector"],
 					new CodeMatch(operand: SymbolExtensions.GetMethodInfo(() => GenCollection.RandomElementByWeight<TraitDef>(default, default))),
-					Stfld[name: "newTraitDef"] // we will start inserting just before this code
-				);
+					Stfld[name: "newTraitDef"]
+				)
+				.ThrowIfInvalid("cannot find Ldloc+RandomElementByWeight+stfld");
 
 			var local_weightSelector = matcher.NamedMatch("weightSelector").operand as LocalBuilder;
 			var field_newTraitDef = matcher.NamedMatch("newTraitDef").operand as FieldInfo;
@@ -197,10 +197,11 @@ namespace Mattworld
 					Ldfld[operand: AccessTools.DeclaredField(typeof(TraitScore), nameof(TraitScore.def))]
 				)
 				.MatchStartForward(
-					Ldloc[operand: local_displayclass, name: "start"],
+					Ldloc_3[name: "start"],
 					Ldfld[operand: field_newTraitDef],
 					new CodeMatch(operand: SymbolExtensions.GetMethodInfo(() => PawnGenerator.RandomTraitDegree(default)))
-				);
+				)
+				.ThrowIfInvalid("cannot find ldloc+ldfld+RandomTraitDegree()");
 
 			var labels = matcher.NamedMatch("start").labels.ToArray();
 
